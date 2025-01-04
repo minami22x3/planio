@@ -1,0 +1,19 @@
+{
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "embeddedLanguageFormatting": "auto",
+  "endOfLine": "auto",
+  "jsxSingleQuote": false,
+  "printWidth": 120,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "importOrder": ["<THIRD_PARTY_MODULES>", "", "^@/(.*)$", "", "^[.]"],
+  "importOrderCaseSensitive": true,
+  "importOrderTypeScriptVersion": "5.7.2"
+}
