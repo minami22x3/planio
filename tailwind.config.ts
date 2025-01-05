@@ -2,15 +2,36 @@ import { type Config } from 'tailwindcss';
 
 export default {
   darkMode: 'media',
-  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
-      background: {
-        DEFAULT: 'hsl(var(--neutral-0))',
-      },
-      foreground: {
+      background: 'hsl(var(--neutral-0))',
+      foreground: 'hsl(var(--primary-500))',
+      input: 'hsl(var(--secondary-200))',
+      ring: 'hsl(var(--primary-400))',
+      primary: {
         DEFAULT: 'hsl(var(--primary-500))',
+        foreground: 'hsl(var(--neutral-0))',
       },
+      secondary: {
+        DEFAULT: 'hsl(var(--neutral-500))',
+        foreground: 'hsl(var(--neutral-25))',
+      },
+      destructive: {
+        DEFAULT: 'hsl(var(--error-300))',
+        foreground: 'hsl(var(--error-50))',
+      },
+      outline: {
+        DEFAULT: 'hsl(var(--neutral-0))',
+        foreground: 'hsl(var(--primary-500))',
+      },
+      accent: {
+        DEFAULT: 'hsl(var(--neutral-50))',
+        foreground: 'hsl(var(--primary-500))',
+      },
+    },
+    fontFamily: {
+      epilogue: 'var(--font-epilogue-serif)',
     },
     fontSize: {
       'heading-1': 'var(--text-3xl)',
