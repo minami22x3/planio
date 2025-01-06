@@ -5,6 +5,7 @@ export default {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}', './components/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
+      transparent: 'transparent',
       background: 'hsl(var(--neutral-0))',
       foreground: 'hsl(var(--primary-500))',
       input: 'hsl(var(--secondary-200))',
@@ -28,6 +29,10 @@ export default {
       accent: {
         DEFAULT: 'hsl(var(--neutral-50))',
         foreground: 'hsl(var(--primary-500))',
+      },
+      muted: {
+        DEFAULT: 'hsl(var(--neutral-500))',
+        foreground: 'hsl(var(--neutral-25))',
       },
     },
     fontFamily: {
