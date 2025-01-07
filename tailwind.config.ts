@@ -6,6 +6,7 @@ export default {
   theme: {
     colors: {
       transparent: 'transparent',
+      black: 'hsl(var(--neutral-1000))',
       background: 'hsl(var(--neutral-0))',
       foreground: 'hsl(var(--primary-500))',
       input: 'hsl(var(--secondary-200))',
@@ -32,7 +33,7 @@ export default {
       },
       muted: {
         DEFAULT: 'hsl(var(--neutral-500))',
-        foreground: 'hsl(var(--neutral-25))',
+        foreground: 'hsl(var(--neutral-400))',
       },
     },
     fontFamily: {
@@ -48,6 +49,7 @@ export default {
       caption: 'var(--text-sm)',
     },
     lineHeight: {
+      none: 'none',
       tight: 'var(--leading-tight)',
       snug: 'var(--leading-snug)',
       normal: 'var(--leading-normal)',

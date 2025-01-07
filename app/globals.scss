@@ -152,5 +152,33 @@
 
   .input {
     @apply flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-body shadow-sm transition-colors file:border-0 file:bg-transparent file:text-caption file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-caption;
+
+    &-container {
+      @apply flex rounded-lg shadow-sm shadow-black/5;
+
+      &:has(> .input-start-add-on) {
+        .input {
+          @apply -ms-px rounded-s-none shadow-none;
+        }
+      }
+
+      &:has(> .input-end-add-on) {
+        .input {
+          @apply -me-px rounded-e-none shadow-none;
+        }
+      }
+    }
+
+    &-start-add-on {
+      @apply -z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-caption text-muted-foreground;
+    }
+
+    &-end-add-on {
+      @apply -z-10 inline-flex items-center rounded-e-lg border border-input bg-background px-3 text-caption text-muted-foreground;
+    }
+  }
+
+  .label {
+    @apply text-caption font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
   }
 }
