@@ -4,10 +4,13 @@ import { HttpLink } from '@apollo/client';
 import { ApolloClient, ApolloNextAppProvider, InMemoryCache } from '@apollo/experimental-nextjs-app-support';
 import { type PropsWithChildren } from 'react';
 
+const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : `http://localhost:${process.env.PORT ?? 3000}`;
+
 const makeClient = () => {
   const httpLink = new HttpLink({
-    uri: `${process.env.NEXT_PUBLIC_SUPABASE_URL}/graphql/v1`,
-    headers: { apikey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! },
+    uri: `${BASE_URL}/api/graphql`,
     fetchOptions: { cache: 'no-store' },
   });
 

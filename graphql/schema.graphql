@@ -1,564 +1,585 @@
-"""
-A high precision floating point value represented as a string
-"""
-scalar BigFloat
+input InnerOrder {
+  direction: OrderDirection!
 
-"""
-Boolean expression comparing fields on type "BigFloat"
-"""
-input BigFloatFilter {
-  eq: BigFloat
-  gt: BigFloat
-  gte: BigFloat
-  in: [BigFloat!]
-  is: FilterIs
-  lt: BigFloat
-  lte: BigFloat
-  neq: BigFloat
+  """
+  Priority of current field
+  """
+  priority: Int!
 }
 
-"""
-Boolean expression comparing fields on type "BigFloatList"
-"""
-input BigFloatListFilter {
-  containedBy: [BigFloat!]
-  contains: [BigFloat!]
-  eq: [BigFloat!]
-  is: FilterIs
-  overlaps: [BigFloat!]
-}
-
-"""
-An arbitrary size integer represented as a string
-"""
-scalar BigInt
-
-"""
-Boolean expression comparing fields on type "BigInt"
-"""
-input BigIntFilter {
-  eq: BigInt
-  gt: BigInt
-  gte: BigInt
-  in: [BigInt!]
-  is: FilterIs
-  lt: BigInt
-  lte: BigInt
-  neq: BigInt
-}
-
-"""
-Boolean expression comparing fields on type "BigIntList"
-"""
-input BigIntListFilter {
-  containedBy: [BigInt!]
-  contains: [BigInt!]
-  eq: [BigInt!]
-  is: FilterIs
-  overlaps: [BigInt!]
-}
-
-"""
-Boolean expression comparing fields on type "Boolean"
-"""
-input BooleanFilter {
-  eq: Boolean
-  is: FilterIs
-}
-
-"""
-Boolean expression comparing fields on type "BooleanList"
-"""
-input BooleanListFilter {
-  containedBy: [Boolean!]
-  contains: [Boolean!]
-  eq: [Boolean!]
-  is: FilterIs
-  overlaps: [Boolean!]
-}
-
-"""
-An opaque string using for tracking a position in results during pagination
-"""
-scalar Cursor
-
-"""
-A date without time information
-"""
-scalar Date
-
-"""
-Boolean expression comparing fields on type "Date"
-"""
-input DateFilter {
-  eq: Date
-  gt: Date
-  gte: Date
-  in: [Date!]
-  is: FilterIs
-  lt: Date
-  lte: Date
-  neq: Date
-}
-
-"""
-Boolean expression comparing fields on type "DateList"
-"""
-input DateListFilter {
-  containedBy: [Date!]
-  contains: [Date!]
-  eq: [Date!]
-  is: FilterIs
-  overlaps: [Date!]
-}
-
-"""
-A date and time
-"""
-scalar Datetime
-
-"""
-Boolean expression comparing fields on type "Datetime"
-"""
-input DatetimeFilter {
-  eq: Datetime
-  gt: Datetime
-  gte: Datetime
-  in: [Datetime!]
-  is: FilterIs
-  lt: Datetime
-  lte: Datetime
-  neq: Datetime
-}
-
-"""
-Boolean expression comparing fields on type "DatetimeList"
-"""
-input DatetimeListFilter {
-  containedBy: [Datetime!]
-  contains: [Datetime!]
-  eq: [Datetime!]
-  is: FilterIs
-  overlaps: [Datetime!]
-}
-
-enum FilterIs {
-  NOT_NULL
-  NULL
-}
-
-"""
-Boolean expression comparing fields on type "Float"
-"""
-input FloatFilter {
-  eq: Float
-  gt: Float
-  gte: Float
-  in: [Float!]
-  is: FilterIs
-  lt: Float
-  lte: Float
-  neq: Float
-}
-
-"""
-Boolean expression comparing fields on type "FloatList"
-"""
-input FloatListFilter {
-  containedBy: [Float!]
-  contains: [Float!]
-  eq: [Float!]
-  is: FilterIs
-  overlaps: [Float!]
-}
-
-"""
-Boolean expression comparing fields on type "ID"
-"""
-input IDFilter {
-  eq: ID
-}
-
-"""
-Boolean expression comparing fields on type "Int"
-"""
-input IntFilter {
-  eq: Int
-  gt: Int
-  gte: Int
-  in: [Int!]
-  is: FilterIs
-  lt: Int
-  lte: Int
-  neq: Int
-}
-
-"""
-Boolean expression comparing fields on type "IntList"
-"""
-input IntListFilter {
-  containedBy: [Int!]
-  contains: [Int!]
-  eq: [Int!]
-  is: FilterIs
-  overlaps: [Int!]
-}
-
-"""
-A Javascript Object Notation value serialized as a string
-"""
-scalar JSON
-
-"""
-The root type for creating and mutating data
-"""
 type Mutation {
-  """
-  Deletes zero or more records from the `users` collection
-  """
-  deleteFromusersCollection(
-    """
-    The maximum number of records in the collection permitted to be affected
-    """
-    atMost: Int! = 1
-
-    """
-    Restricts the mutation's impact to records matching the criteria
-    """
-    filter: usersFilter
-  ): usersDeleteResponse!
-
-  """
-  Adds one or more `users` records to the collection
-  """
-  insertIntousersCollection(objects: [usersInsertInput!]!): usersInsertResponse
-
-  """
-  Updates zero or more records in the `users` collection
-  """
-  updateusersCollection(
-    """
-    The maximum number of records in the collection permitted to be affected
-    """
-    atMost: Int! = 1
-
-    """
-    Restricts the mutation's impact to records matching the criteria
-    """
-    filter: usersFilter
-
-    """
-    Fields that are set will be updated for all records matching the `filter`
-    """
-    set: usersUpdateInput!
-  ): usersUpdateResponse!
-}
-
-interface Node {
-  """
-  Retrieves a record by `ID`
-  """
-  nodeId: ID!
+  deleteFromUsers(where: UsersFilters): [UsersItem!]!
+  insertIntoUsers(values: [UsersInsertInput!]!): [UsersItem!]!
+  insertIntoUsersSingle(values: UsersInsertInput!): UsersItem
+  updateUsers(set: UsersUpdateInput!, where: UsersFilters): [UsersItem!]!
 }
 
 """
-Any type not handled by the type system
+Order by direction
 """
-scalar Opaque
+enum OrderDirection {
+  """
+  Ascending order
+  """
+  asc
 
-"""
-Boolean expression comparing fields on type "Opaque"
-"""
-input OpaqueFilter {
-  eq: Opaque
-  is: FilterIs
+  """
+  Descending order
+  """
+  desc
 }
 
-"""
-Defines a per-field sorting order
-"""
-enum OrderByDirection {
-  """
-  Ascending order, nulls first
-  """
-  AscNullsFirst
-
-  """
-  Ascending order, nulls last
-  """
-  AscNullsLast
-
-  """
-  Descending order, nulls first
-  """
-  DescNullsFirst
-
-  """
-  Descending order, nulls last
-  """
-  DescNullsLast
-}
-
-type PageInfo {
-  endCursor: String
-  hasNextPage: Boolean!
-  hasPreviousPage: Boolean!
-  startCursor: String
-}
-
-"""
-The root type for querying data
-"""
 type Query {
-  """
-  Retrieve a record by its `ID`
-  """
-  node(
-    """
-    The record's `ID`
-    """
-    nodeId: ID!
-  ): Node
-
-  """
-  A pagable collection of type `users`
-  """
-  usersCollection(
-    """
-    Query values in the collection after the provided cursor
-    """
-    after: Cursor
-
-    """
-    Query values in the collection before the provided cursor
-    """
-    before: Cursor
-
-    """
-    Filters to apply to the results set when querying from the collection
-    """
-    filter: usersFilter
-
-    """
-    Query the first `n` records in the collection
-    """
-    first: Int
-
-    """
-    Query the last `n` records in the collection
-    """
-    last: Int
-
-    """
-    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
-    """
-    offset: Int
-
-    """
-    Sort order to apply to the collection
-    """
-    orderBy: [usersOrderBy!]
-  ): usersConnection
+  users(limit: Int, offset: Int, orderBy: UsersOrderBy, where: UsersFilters): [UsersSelectItem!]!
+  usersSingle(offset: Int, orderBy: UsersOrderBy, where: UsersFilters): UsersSelectItem
 }
 
-"""
-Boolean expression comparing fields on type "String"
-"""
-input StringFilter {
+input UsersCreatedAtFilters {
+  OR: [UsersCreatedAtfiltersOr!]
+
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersCreatedAtfiltersOr {
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersDisplayNameFilters {
+  OR: [UsersDisplayNamefiltersOr!]
   eq: String
   gt: String
   gte: String
   ilike: String
-  in: [String!]
-  iregex: String
-  is: FilterIs
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
   like: String
   lt: String
   lte: String
-  neq: String
-  regex: String
-  startsWith: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-"""
-Boolean expression comparing fields on type "StringList"
-"""
-input StringListFilter {
-  containedBy: [String!]
-  contains: [String!]
-  eq: [String!]
-  is: FilterIs
-  overlaps: [String!]
+input UsersDisplayNamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-"""
-A time without date information
-"""
-scalar Time
+input UsersEmailFilters {
+  OR: [UsersEmailfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
 
-"""
-Boolean expression comparing fields on type "Time"
-"""
-input TimeFilter {
-  eq: Time
-  gt: Time
-  gte: Time
-  in: [Time!]
-  is: FilterIs
-  lt: Time
-  lte: Time
-  neq: Time
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-"""
-Boolean expression comparing fields on type "TimeList"
-"""
-input TimeListFilter {
-  containedBy: [Time!]
-  contains: [Time!]
-  eq: [Time!]
-  is: FilterIs
-  overlaps: [Time!]
+input UsersEmailfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-"""
-A universally unique identifier
-"""
-scalar UUID
-
-"""
-Boolean expression comparing fields on type "UUID"
-"""
-input UUIDFilter {
-  eq: UUID
-  in: [UUID!]
-  is: FilterIs
-  neq: UUID
+input UsersFilters {
+  OR: [UsersFiltersOr!]
+  createdAt: UsersCreatedAtFilters
+  displayName: UsersDisplayNameFilters
+  email: UsersEmailFilters
+  id: UsersIdFilters
+  password: UsersPasswordFilters
+  updatedAt: UsersUpdatedAtFilters
+  username: UsersUsernameFilters
 }
 
-"""
-Boolean expression comparing fields on type "UUIDList"
-"""
-input UUIDListFilter {
-  containedBy: [UUID!]
-  contains: [UUID!]
-  eq: [UUID!]
-  is: FilterIs
-  overlaps: [UUID!]
+input UsersFiltersOr {
+  createdAt: UsersCreatedAtFilters
+  displayName: UsersDisplayNameFilters
+  email: UsersEmailFilters
+  id: UsersIdFilters
+  password: UsersPasswordFilters
+  updatedAt: UsersUpdatedAtFilters
+  username: UsersUsernameFilters
 }
 
-type users implements Node {
-  created_at: Datetime
+input UsersIdFilters {
+  OR: [UsersIdfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersIdfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersInsertInput {
+  """
+  Date
+  """
+  createdAt: String
   displayName: String
   email: String!
-  id: String!
+  id: String
+  password: String!
 
   """
-  Globally Unique Record Identifier
+  Date
   """
-  nodeId: ID!
-  password: String!
-  updated_at: Datetime
+  updatedAt: String
   username: String!
 }
 
-type usersConnection {
-  edges: [usersEdge!]!
-  pageInfo: PageInfo!
+type UsersItem {
+  """
+  Date
+  """
+  createdAt: String
+  displayName: String
+  email: String!
+  id: String!
+  password: String!
+
+  """
+  Date
+  """
+  updatedAt: String
+  username: String!
 }
 
-type usersDeleteResponse {
-  """
-  Count of the records impacted by the mutation
-  """
-  affectedCount: Int!
-
-  """
-  Array of records impacted by the mutation
-  """
-  records: [users!]!
+input UsersOrderBy {
+  createdAt: InnerOrder
+  displayName: InnerOrder
+  email: InnerOrder
+  id: InnerOrder
+  password: InnerOrder
+  updatedAt: InnerOrder
+  username: InnerOrder
 }
 
-type usersEdge {
-  cursor: String!
-  node: users!
+input UsersPasswordFilters {
+  OR: [UsersPasswordfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-input usersFilter {
-  """
-  Returns true only if all its inner filters are true, otherwise returns false
-  """
-  and: [usersFilter!]
-  created_at: DatetimeFilter
-  displayName: StringFilter
-  email: StringFilter
-  id: StringFilter
-  nodeId: IDFilter
+input UsersPasswordfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
 
   """
-  Negates a filter
+  Array<undefined>
   """
-  not: usersFilter
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
 
   """
-  Returns true if at least one of its inner filters is true, otherwise returns false
+  Array<undefined>
   """
-  or: [usersFilter!]
-  password: StringFilter
-  updated_at: DatetimeFilter
-  username: StringFilter
+  notInArray: [String!]
+  notLike: String
 }
 
-input usersInsertInput {
-  created_at: Datetime
+type UsersSelectItem {
+  """
+  Date
+  """
+  createdAt: String
+  displayName: String
+  email: String!
+  id: String!
+  password: String!
+
+  """
+  Date
+  """
+  updatedAt: String
+  username: String!
+}
+
+input UsersUpdateInput {
+  """
+  Date
+  """
+  createdAt: String
   displayName: String
   email: String
   id: String
   password: String
-  updated_at: Datetime
+
+  """
+  Date
+  """
+  updatedAt: String
   username: String
 }
 
-type usersInsertResponse {
-  """
-  Count of the records impacted by the mutation
-  """
-  affectedCount: Int!
+input UsersUpdatedAtFilters {
+  OR: [UsersUpdatedAtfiltersOr!]
 
   """
-  Array of records impacted by the mutation
+  Date
   """
-  records: [users!]!
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-input usersOrderBy {
-  created_at: OrderByDirection
-  displayName: OrderByDirection
-  email: OrderByDirection
-  id: OrderByDirection
-  password: OrderByDirection
-  updated_at: OrderByDirection
-  username: OrderByDirection
+input UsersUpdatedAtfiltersOr {
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-input usersUpdateInput {
-  created_at: Datetime
-  displayName: String
-  email: String
-  id: String
-  password: String
-  updated_at: Datetime
-  username: String
+input UsersUsernameFilters {
+  OR: [UsersUsernamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }
 
-type usersUpdateResponse {
-  """
-  Count of the records impacted by the mutation
-  """
-  affectedCount: Int!
+input UsersUsernamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
 
   """
-  Array of records impacted by the mutation
+  Array<undefined>
   """
-  records: [users!]!
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
 }

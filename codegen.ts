@@ -4,13 +4,7 @@ import { addTypenameSelectionDocumentTransform } from '@graphql-codegen/client-p
 import 'dotenv/config';
 
 const config: CodegenConfig = {
-  schema: [
-    {
-      [`${process.env.SUPABASE_URL}/graphql/v1`]: {
-        headers: { apikey: process.env.SUPABASE_ANON_KEY! },
-      },
-    },
-  ],
+  schema: `http://localhost:${process.env.PORT ?? 3000}/api/graphql`,
   documents: 'graphql/**/*.ts',
   overwrite: true,
   ignoreNoDocuments: true,
