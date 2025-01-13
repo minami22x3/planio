@@ -103,7 +103,7 @@
 
 @layer components {
   .button {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md align-middle text-body font-semibold leading-tight ring-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md align-middle text-body font-semibold leading-tight ring-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0;
 
     &.-variant {
       &-default {
@@ -154,7 +154,7 @@
     @apply flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-body shadow-sm transition-colors file:border-0 file:bg-transparent file:text-caption file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-caption;
 
     &-container {
-      @apply shadow-black/5 flex rounded-lg shadow-sm;
+      @apply flex rounded-lg shadow-sm shadow-black/5;
 
       &:has(> .input-start-add-on) {
         .input {
@@ -170,16 +170,16 @@
     }
 
     &-start-add-on {
-      @apply -z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-caption text-muted-foreground;
+      @apply -z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-caption text-foreground;
     }
 
     &-end-add-on {
-      @apply -z-10 inline-flex items-center rounded-e-lg border border-input bg-background px-3 text-caption text-muted-foreground;
+      @apply -z-10 inline-flex items-center rounded-e-lg border border-input bg-background px-3 text-caption text-foreground;
     }
   }
 
   .label {
-    @apply leading-none text-caption font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+    @apply text-caption font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
   }
 
   .dialog {

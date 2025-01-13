@@ -11,6 +11,8 @@ export default {
       foreground: 'hsl(var(--primary-500))',
       input: 'hsl(var(--secondary-200))',
       ring: 'hsl(var(--primary-400))',
+      caption: 'hsl(var(--neutral-400))',
+      line: 'hsl(var(--neutral-200))',
       primary: {
         DEFAULT: 'hsl(var(--primary-500))',
         foreground: 'hsl(var(--neutral-0))',
@@ -45,7 +47,7 @@ export default {
       'heading-3': 'var(--text-xl)',
       'heading-4': 'var(--text-lg)',
       'heading-5': 'var(--text-md)',
-      body: 'var(--text-base)',
+      body: 'clamp(12px, 3.25vw, 16px)',
       caption: 'var(--text-sm)',
     },
     lineHeight: {
