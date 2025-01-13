@@ -5,15 +5,15 @@ import 'dotenv/config';
 
 const config: CodegenConfig = {
   schema: `http://localhost:${process.env.PORT ?? 3000}/api/graphql`,
-  documents: 'graphql/**/*.ts',
+  documents: 'gql/**/*.ts',
   overwrite: true,
   ignoreNoDocuments: true,
   generates: {
-    'graphql/schema.graphql': {
+    'gql/schema.graphql': {
       plugins: ['schema-ast'],
       config: { commentDescriptions: true },
     },
-    'graphql/types.ts': {
+    'gql/types.ts': {
       documentTransforms: [addTypenameSelectionDocumentTransform],
       plugins: ['typescript', 'typescript-operations', 'typescript-react-apollo'],
     },

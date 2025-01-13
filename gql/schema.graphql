@@ -30,8 +30,8 @@ enum OrderDirection {
 }
 
 type Query {
+  user(offset: Int, orderBy: UsersOrderBy, where: UsersFilters): UsersSelectItem
   users(limit: Int, offset: Int, orderBy: UsersOrderBy, where: UsersFilters): [UsersSelectItem!]!
-  usersSingle(offset: Int, orderBy: UsersOrderBy, where: UsersFilters): UsersSelectItem
 }
 
 input UsersCreatedAtFilters {

@@ -59,18 +59,18 @@ export enum OrderDirection {
 
 export type Query = {
   __typename?: 'Query';
+  user?: Maybe<UsersSelectItem>;
   users: Array<UsersSelectItem>;
-  usersSingle?: Maybe<UsersSelectItem>;
 };
 
-export type QueryUsersArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
+export type QueryUserArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<UsersOrderBy>;
   where?: InputMaybe<UsersFilters>;
 };
 
-export type QueryUsersSingleArgs = {
+export type QueryUsersArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<UsersOrderBy>;
   where?: InputMaybe<UsersFilters>;
@@ -454,6 +454,14 @@ export type UsersUsernamefiltersOr = {
   notLike?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type UserFragment = {
+  __typename: 'UsersSelectItem';
+  id: string;
+  username: string;
+  displayName?: string | null;
+  email: string;
+};
+
 export type UsersQueryVariables = Exact<{ [key: string]: never }>;
 
 export type UsersQuery = {
@@ -463,23 +471,43 @@ export type UsersQuery = {
     id: string;
     username: string;
     displayName?: string | null;
-    createdAt?: string | null;
-    updatedAt?: string | null;
+    email: string;
   }>;
 };
 
+export type UserQueryVariables = Exact<{
+  where?: InputMaybe<UsersFilters>;
+}>;
+
+export type UserQuery = {
+  __typename: 'Query';
+  user?: {
+    __typename: 'UsersSelectItem';
+    id: string;
+    username: string;
+    displayName?: string | null;
+    email: string;
+  } | null;
+};
+
+export const UserFragmentDoc = gql`
+  fragment User on UsersSelectItem {
+    __typename
+    id
+    username
+    displayName
+    email
+  }
+`;
 export const UsersDocument = gql`
   query Users {
     __typename
     users {
       __typename
-      id
-      username
-      displayName
-      createdAt
-      updatedAt
+      ...User
     }
   }
+  ${UserFragmentDoc}
 `;
 
 /**
@@ -515,3 +543,48 @@ export type UsersQueryHookResult = ReturnType<typeof useUsersQuery>;
 export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>;
 export type UsersSuspenseQueryHookResult = ReturnType<typeof useUsersSuspenseQuery>;
 export type UsersQueryResult = Apollo.QueryResult<UsersQuery, UsersQueryVariables>;
+export const UserDocument = gql`
+  query User($where: UsersFilters) {
+    __typename
+    user(where: $where) {
+      __typename
+      ...User
+    }
+  }
+  ${UserFragmentDoc}
+`;
+
+/**
+ * __useUserQuery__
+ *
+ * To run a query within a React component, call `useUserQuery` and pass it any options that fit your needs.
+ * When your component renders, `useUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useUserQuery({
+ *   variables: {
+ *      where: // value for 'where'
+ *   },
+ * });
+ */
+export function useUserQuery(baseOptions?: Apollo.QueryHookOptions<UserQuery, UserQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<UserQuery, UserQueryVariables>(UserDocument, options);
+}
+export function useUserLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserQuery, UserQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<UserQuery, UserQueryVariables>(UserDocument, options);
+}
+export function useUserSuspenseQuery(
+  baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<UserQuery, UserQueryVariables>
+) {
+  const options = baseOptions === Apollo.skipToken ? baseOptions : { ...defaultOptions, ...baseOptions };
+  return Apollo.useSuspenseQuery<UserQuery, UserQueryVariables>(UserDocument, options);
+}
+export type UserQueryHookResult = ReturnType<typeof useUserQuery>;
+export type UserLazyQueryHookResult = ReturnType<typeof useUserLazyQuery>;
+export type UserSuspenseQueryHookResult = ReturnType<typeof useUserSuspenseQuery>;
+export type UserQueryResult = Apollo.QueryResult<UserQuery, UserQueryVariables>;
