@@ -2,9 +2,8 @@
 
 import { useForm, type SubmitHandler } from 'react-hook-form';
 
+import { Apple, Google } from '@/components/icons';
 import { Button, Input, InputContainer, InputStartAddOn } from '@/components/ui';
-import Apple from '@/public/svgs/apple.svg';
-import Google from '@/public/svgs/google.svg';
 
 type FieldValues = {
   username: string;
@@ -36,11 +35,11 @@ const Login = () => {
           <div className="my-4 flex gap-3">
             <Button variant="outline" className="flex-1">
               <Google />
-              <span>Log in with Google</span>
+              Log in with Google
             </Button>
             <Button variant="outline" className="flex-1">
               <Apple />
-              <span>Log in with Apple</span>
+              Log in with Apple
             </Button>
           </div>
 
