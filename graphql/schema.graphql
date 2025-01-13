@@ -1,0 +1,564 @@
+"""
+A high precision floating point value represented as a string
+"""
+scalar BigFloat
+
+"""
+Boolean expression comparing fields on type "BigFloat"
+"""
+input BigFloatFilter {
+  eq: BigFloat
+  gt: BigFloat
+  gte: BigFloat
+  in: [BigFloat!]
+  is: FilterIs
+  lt: BigFloat
+  lte: BigFloat
+  neq: BigFloat
+}
+
+"""
+Boolean expression comparing fields on type "BigFloatList"
+"""
+input BigFloatListFilter {
+  containedBy: [BigFloat!]
+  contains: [BigFloat!]
+  eq: [BigFloat!]
+  is: FilterIs
+  overlaps: [BigFloat!]
+}
+
+"""
+An arbitrary size integer represented as a string
+"""
+scalar BigInt
+
+"""
+Boolean expression comparing fields on type "BigInt"
+"""
+input BigIntFilter {
+  eq: BigInt
+  gt: BigInt
+  gte: BigInt
+  in: [BigInt!]
+  is: FilterIs
+  lt: BigInt
+  lte: BigInt
+  neq: BigInt
+}
+
+"""
+Boolean expression comparing fields on type "BigIntList"
+"""
+input BigIntListFilter {
+  containedBy: [BigInt!]
+  contains: [BigInt!]
+  eq: [BigInt!]
+  is: FilterIs
+  overlaps: [BigInt!]
+}
+
+"""
+Boolean expression comparing fields on type "Boolean"
+"""
+input BooleanFilter {
+  eq: Boolean
+  is: FilterIs
+}
+
+"""
+Boolean expression comparing fields on type "BooleanList"
+"""
+input BooleanListFilter {
+  containedBy: [Boolean!]
+  contains: [Boolean!]
+  eq: [Boolean!]
+  is: FilterIs
+  overlaps: [Boolean!]
+}
+
+"""
+An opaque string using for tracking a position in results during pagination
+"""
+scalar Cursor
+
+"""
+A date without time information
+"""
+scalar Date
+
+"""
+Boolean expression comparing fields on type "Date"
+"""
+input DateFilter {
+  eq: Date
+  gt: Date
+  gte: Date
+  in: [Date!]
+  is: FilterIs
+  lt: Date
+  lte: Date
+  neq: Date
+}
+
+"""
+Boolean expression comparing fields on type "DateList"
+"""
+input DateListFilter {
+  containedBy: [Date!]
+  contains: [Date!]
+  eq: [Date!]
+  is: FilterIs
+  overlaps: [Date!]
+}
+
+"""
+A date and time
+"""
+scalar Datetime
+
+"""
+Boolean expression comparing fields on type "Datetime"
+"""
+input DatetimeFilter {
+  eq: Datetime
+  gt: Datetime
+  gte: Datetime
+  in: [Datetime!]
+  is: FilterIs
+  lt: Datetime
+  lte: Datetime
+  neq: Datetime
+}
+
+"""
+Boolean expression comparing fields on type "DatetimeList"
+"""
+input DatetimeListFilter {
+  containedBy: [Datetime!]
+  contains: [Datetime!]
+  eq: [Datetime!]
+  is: FilterIs
+  overlaps: [Datetime!]
+}
+
+enum FilterIs {
+  NOT_NULL
+  NULL
+}
+
+"""
+Boolean expression comparing fields on type "Float"
+"""
+input FloatFilter {
+  eq: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  is: FilterIs
+  lt: Float
+  lte: Float
+  neq: Float
+}
+
+"""
+Boolean expression comparing fields on type "FloatList"
+"""
+input FloatListFilter {
+  containedBy: [Float!]
+  contains: [Float!]
+  eq: [Float!]
+  is: FilterIs
+  overlaps: [Float!]
+}
+
+"""
+Boolean expression comparing fields on type "ID"
+"""
+input IDFilter {
+  eq: ID
+}
+
+"""
+Boolean expression comparing fields on type "Int"
+"""
+input IntFilter {
+  eq: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  is: FilterIs
+  lt: Int
+  lte: Int
+  neq: Int
+}
+
+"""
+Boolean expression comparing fields on type "IntList"
+"""
+input IntListFilter {
+  containedBy: [Int!]
+  contains: [Int!]
+  eq: [Int!]
+  is: FilterIs
+  overlaps: [Int!]
+}
+
+"""
+A Javascript Object Notation value serialized as a string
+"""
+scalar JSON
+
+"""
+The root type for creating and mutating data
+"""
+type Mutation {
+  """
+  Deletes zero or more records from the `users` collection
+  """
+  deleteFromusersCollection(
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
+    filter: usersFilter
+  ): usersDeleteResponse!
+
+  """
+  Adds one or more `users` records to the collection
+  """
+  insertIntousersCollection(objects: [usersInsertInput!]!): usersInsertResponse
+
+  """
+  Updates zero or more records in the `users` collection
+  """
+  updateusersCollection(
+    """
+    The maximum number of records in the collection permitted to be affected
+    """
+    atMost: Int! = 1
+
+    """
+    Restricts the mutation's impact to records matching the criteria
+    """
+    filter: usersFilter
+
+    """
+    Fields that are set will be updated for all records matching the `filter`
+    """
+    set: usersUpdateInput!
+  ): usersUpdateResponse!
+}
+
+interface Node {
+  """
+  Retrieves a record by `ID`
+  """
+  nodeId: ID!
+}
+
+"""
+Any type not handled by the type system
+"""
+scalar Opaque
+
+"""
+Boolean expression comparing fields on type "Opaque"
+"""
+input OpaqueFilter {
+  eq: Opaque
+  is: FilterIs
+}
+
+"""
+Defines a per-field sorting order
+"""
+enum OrderByDirection {
+  """
+  Ascending order, nulls first
+  """
+  AscNullsFirst
+
+  """
+  Ascending order, nulls last
+  """
+  AscNullsLast
+
+  """
+  Descending order, nulls first
+  """
+  DescNullsFirst
+
+  """
+  Descending order, nulls last
+  """
+  DescNullsLast
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+"""
+The root type for querying data
+"""
+type Query {
+  """
+  Retrieve a record by its `ID`
+  """
+  node(
+    """
+    The record's `ID`
+    """
+    nodeId: ID!
+  ): Node
+
+  """
+  A pagable collection of type `users`
+  """
+  usersCollection(
+    """
+    Query values in the collection after the provided cursor
+    """
+    after: Cursor
+
+    """
+    Query values in the collection before the provided cursor
+    """
+    before: Cursor
+
+    """
+    Filters to apply to the results set when querying from the collection
+    """
+    filter: usersFilter
+
+    """
+    Query the first `n` records in the collection
+    """
+    first: Int
+
+    """
+    Query the last `n` records in the collection
+    """
+    last: Int
+
+    """
+    Skip n values from the after cursor. Alternative to cursor pagination. Backward pagination not supported.
+    """
+    offset: Int
+
+    """
+    Sort order to apply to the collection
+    """
+    orderBy: [usersOrderBy!]
+  ): usersConnection
+}
+
+"""
+Boolean expression comparing fields on type "String"
+"""
+input StringFilter {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  in: [String!]
+  iregex: String
+  is: FilterIs
+  like: String
+  lt: String
+  lte: String
+  neq: String
+  regex: String
+  startsWith: String
+}
+
+"""
+Boolean expression comparing fields on type "StringList"
+"""
+input StringListFilter {
+  containedBy: [String!]
+  contains: [String!]
+  eq: [String!]
+  is: FilterIs
+  overlaps: [String!]
+}
+
+"""
+A time without date information
+"""
+scalar Time
+
+"""
+Boolean expression comparing fields on type "Time"
+"""
+input TimeFilter {
+  eq: Time
+  gt: Time
+  gte: Time
+  in: [Time!]
+  is: FilterIs
+  lt: Time
+  lte: Time
+  neq: Time
+}
+
+"""
+Boolean expression comparing fields on type "TimeList"
+"""
+input TimeListFilter {
+  containedBy: [Time!]
+  contains: [Time!]
+  eq: [Time!]
+  is: FilterIs
+  overlaps: [Time!]
+}
+
+"""
+A universally unique identifier
+"""
+scalar UUID
+
+"""
+Boolean expression comparing fields on type "UUID"
+"""
+input UUIDFilter {
+  eq: UUID
+  in: [UUID!]
+  is: FilterIs
+  neq: UUID
+}
+
+"""
+Boolean expression comparing fields on type "UUIDList"
+"""
+input UUIDListFilter {
+  containedBy: [UUID!]
+  contains: [UUID!]
+  eq: [UUID!]
+  is: FilterIs
+  overlaps: [UUID!]
+}
+
+type users implements Node {
+  created_at: Datetime
+  displayName: String
+  email: String!
+  id: String!
+
+  """
+  Globally Unique Record Identifier
+  """
+  nodeId: ID!
+  password: String!
+  updated_at: Datetime
+  username: String!
+}
+
+type usersConnection {
+  edges: [usersEdge!]!
+  pageInfo: PageInfo!
+}
+
+type usersDeleteResponse {
+  """
+  Count of the records impacted by the mutation
+  """
+  affectedCount: Int!
+
+  """
+  Array of records impacted by the mutation
+  """
+  records: [users!]!
+}
+
+type usersEdge {
+  cursor: String!
+  node: users!
+}
+
+input usersFilter {
+  """
+  Returns true only if all its inner filters are true, otherwise returns false
+  """
+  and: [usersFilter!]
+  created_at: DatetimeFilter
+  displayName: StringFilter
+  email: StringFilter
+  id: StringFilter
+  nodeId: IDFilter
+
+  """
+  Negates a filter
+  """
+  not: usersFilter
+
+  """
+  Returns true if at least one of its inner filters is true, otherwise returns false
+  """
+  or: [usersFilter!]
+  password: StringFilter
+  updated_at: DatetimeFilter
+  username: StringFilter
+}
+
+input usersInsertInput {
+  created_at: Datetime
+  displayName: String
+  email: String
+  id: String
+  password: String
+  updated_at: Datetime
+  username: String
+}
+
+type usersInsertResponse {
+  """
+  Count of the records impacted by the mutation
+  """
+  affectedCount: Int!
+
+  """
+  Array of records impacted by the mutation
+  """
+  records: [users!]!
+}
+
+input usersOrderBy {
+  created_at: OrderByDirection
+  displayName: OrderByDirection
+  email: OrderByDirection
+  id: OrderByDirection
+  password: OrderByDirection
+  updated_at: OrderByDirection
+  username: OrderByDirection
+}
+
+input usersUpdateInput {
+  created_at: Datetime
+  displayName: String
+  email: String
+  id: String
+  password: String
+  updated_at: Datetime
+  username: String
+}
+
+type usersUpdateResponse {
+  """
+  Count of the records impacted by the mutation
+  """
+  affectedCount: Int!
+
+  """
+  Array of records impacted by the mutation
+  """
+  records: [users!]!
+}
