@@ -4,6 +4,8 @@ import { type FunctionComponent, type PropsWithChildren } from 'react';
 
 import '@/app/globals.scss';
 
+import { ApolloProvider } from '@/app/_apollo-provider';
+
 const epilogueSerif = Epilogue({
   variable: '--font-epilogue-serif',
   subsets: ['latin'],
@@ -18,7 +20,9 @@ export const metadata: Metadata = {
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${epilogueSerif.variable} antialiased`}>{children}</body>
+      <body className={`${epilogueSerif.variable} antialiased`}>
+        <ApolloProvider>{children}</ApolloProvider>
+      </body>
     </html>
   );
 };

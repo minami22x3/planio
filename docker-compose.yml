@@ -1,0 +1,17 @@
+services:
+  postgres:
+    container_name: planiox
+    image: postgres:16.4-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: planiox
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - '6543:5432'
+    restart: unless-stopped
+
+volumes:
+  postgres:

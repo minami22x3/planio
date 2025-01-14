@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plan.io
 
-## Getting Started
+_To Do List Productivity_
 
-First, run the development server:
+## Prerequisites
+
+You'll need to install these tools on your machine:
+
+- [`Node.js`](https://nodejs.org) (v20.18.1 or above)
+- [`Yarn`](https://yarnpkg.com) (v1)
+- [`Docker`](https://docker.com)
+
+## Development
+
+Copy content of `.env.example` file to `.env` file. Then, start the server:
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Database
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In this project, we'll use [`drizzle-orm`](https://orm.drizzle.team) to working with
+[`PostgreSQL`](https://postgresql.org) database.
 
-## Learn More
+To start the local database, run `docker-compose up -d`, then use any tool to access to the database with below
+connection string:
 
-To learn more about Next.js, take a look at the following resources:
+```
+postgres://postgres:postgres@localhost:6543/planiox
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Migrations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Once you are satisfied with the changes (schema declaration, subsequent schema changes, etc.), run
+`yarn drizzle-kit generate --name=<migration_name>` to generate SQL migrations. These migration files are locate in
+`db/migrations` directory.
 
-## Deploy on Vercel
+Then run `yarn drizzle-kit migration` to apply generated SQL migration files to your database.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Visit the [documentation](https://orm.drizzle.team/docs/kit-overview) to learn more about migrations with `drizzle-kit`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### GraphQL Codegen
+
+We also have a `Apollo Server` running on `/api/graphql` route. All schema, queries, mutations you see when
+accessing that route are generated from Drizzle schema. You can customize them in `server/graphql.ts` file.
+
+Run `yarn graphql-codegen` to generate graphql schema and utility hooks corresponding to the queries and mutations you
+customized above.
