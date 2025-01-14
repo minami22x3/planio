@@ -1,3 +1,499 @@
+input ExamplesBarFilters {
+  OR: [ExamplesBarfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesBarfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesBazFilters {
+  OR: [ExamplesBazfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [Int!]
+  notLike: String
+}
+
+input ExamplesBazfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [Int!]
+  notLike: String
+}
+
+input ExamplesCreatedAtFilters {
+  OR: [ExamplesCreatedAtfiltersOr!]
+
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesCreatedAtfiltersOr {
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesFilters {
+  OR: [ExamplesFiltersOr!]
+  bar: ExamplesBarFilters
+  baz: ExamplesBazFilters
+  createdAt: ExamplesCreatedAtFilters
+  foo: ExamplesFooFilters
+  id: ExamplesIdFilters
+  updatedAt: ExamplesUpdatedAtFilters
+}
+
+input ExamplesFiltersOr {
+  bar: ExamplesBarFilters
+  baz: ExamplesBazFilters
+  createdAt: ExamplesCreatedAtFilters
+  foo: ExamplesFooFilters
+  id: ExamplesIdFilters
+  updatedAt: ExamplesUpdatedAtFilters
+}
+
+input ExamplesFooFilters {
+  OR: [ExamplesFoofiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesFoofiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesIdFilters {
+  OR: [ExamplesIdfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesIdfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+
+  """
+  Array<undefined>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+
+  """
+  Array<undefined>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesInsertInput {
+  bar: String!
+  baz: Int
+
+  """
+  Date
+  """
+  createdAt: String
+  foo: String!
+  id: String
+
+  """
+  Date
+  """
+  updatedAt: String
+}
+
+type ExamplesItem {
+  bar: String!
+  baz: Int
+
+  """
+  Date
+  """
+  createdAt: String
+  foo: String!
+  id: String!
+
+  """
+  Date
+  """
+  updatedAt: String
+}
+
+input ExamplesOrderBy {
+  bar: InnerOrder
+  baz: InnerOrder
+  createdAt: InnerOrder
+  foo: InnerOrder
+  id: InnerOrder
+  updatedAt: InnerOrder
+}
+
+type ExamplesSelectItem {
+  bar: String!
+  baz: Int
+
+  """
+  Date
+  """
+  createdAt: String
+  foo: String!
+  id: String!
+
+  """
+  Date
+  """
+  updatedAt: String
+}
+
+input ExamplesUpdateInput {
+  bar: String
+  baz: Int
+
+  """
+  Date
+  """
+  createdAt: String
+  foo: String
+  id: String
+
+  """
+  Date
+  """
+  updatedAt: String
+}
+
+input ExamplesUpdatedAtFilters {
+  OR: [ExamplesUpdatedAtfiltersOr!]
+
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
+input ExamplesUpdatedAtfiltersOr {
+  """
+  Date
+  """
+  eq: String
+
+  """
+  Date
+  """
+  gt: String
+
+  """
+  Date
+  """
+  gte: String
+  ilike: String
+
+  """
+  Array<Date>
+  """
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+
+  """
+  Date
+  """
+  lt: String
+
+  """
+  Date
+  """
+  lte: String
+
+  """
+  Date
+  """
+  ne: String
+  notIlike: String
+
+  """
+  Array<Date>
+  """
+  notInArray: [String!]
+  notLike: String
+}
+
 input InnerOrder {
   direction: OrderDirection!
 
@@ -8,10 +504,10 @@ input InnerOrder {
 }
 
 type Mutation {
-  deleteFromUsers(where: UsersFilters): [UsersItem!]!
-  insertIntoUsers(values: [UsersInsertInput!]!): [UsersItem!]!
-  insertIntoUsersSingle(values: UsersInsertInput!): UsersItem
-  updateUsers(set: UsersUpdateInput!, where: UsersFilters): [UsersItem!]!
+  deleteFromExamples(where: ExamplesFilters): [ExamplesItem!]!
+  insertIntoExamples(values: [ExamplesInsertInput!]!): [ExamplesItem!]!
+  insertIntoExamplesSingle(values: ExamplesInsertInput!): ExamplesItem
+  updateExamples(set: ExamplesUpdateInput!, where: ExamplesFilters): [ExamplesItem!]!
 }
 
 """
@@ -30,556 +526,6 @@ enum OrderDirection {
 }
 
 type Query {
-  user(offset: Int, orderBy: UsersOrderBy, where: UsersFilters): UsersSelectItem
-  users(limit: Int, offset: Int, orderBy: UsersOrderBy, where: UsersFilters): [UsersSelectItem!]!
-}
-
-input UsersCreatedAtFilters {
-  OR: [UsersCreatedAtfiltersOr!]
-
-  """
-  Date
-  """
-  eq: String
-
-  """
-  Date
-  """
-  gt: String
-
-  """
-  Date
-  """
-  gte: String
-  ilike: String
-
-  """
-  Array<Date>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-
-  """
-  Date
-  """
-  lt: String
-
-  """
-  Date
-  """
-  lte: String
-
-  """
-  Date
-  """
-  ne: String
-  notIlike: String
-
-  """
-  Array<Date>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersCreatedAtfiltersOr {
-  """
-  Date
-  """
-  eq: String
-
-  """
-  Date
-  """
-  gt: String
-
-  """
-  Date
-  """
-  gte: String
-  ilike: String
-
-  """
-  Array<Date>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-
-  """
-  Date
-  """
-  lt: String
-
-  """
-  Date
-  """
-  lte: String
-
-  """
-  Date
-  """
-  ne: String
-  notIlike: String
-
-  """
-  Array<Date>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersDisplayNameFilters {
-  OR: [UsersDisplayNamefiltersOr!]
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersDisplayNamefiltersOr {
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersEmailFilters {
-  OR: [UsersEmailfiltersOr!]
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersEmailfiltersOr {
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersFilters {
-  OR: [UsersFiltersOr!]
-  createdAt: UsersCreatedAtFilters
-  displayName: UsersDisplayNameFilters
-  email: UsersEmailFilters
-  id: UsersIdFilters
-  password: UsersPasswordFilters
-  updatedAt: UsersUpdatedAtFilters
-  username: UsersUsernameFilters
-}
-
-input UsersFiltersOr {
-  createdAt: UsersCreatedAtFilters
-  displayName: UsersDisplayNameFilters
-  email: UsersEmailFilters
-  id: UsersIdFilters
-  password: UsersPasswordFilters
-  updatedAt: UsersUpdatedAtFilters
-  username: UsersUsernameFilters
-}
-
-input UsersIdFilters {
-  OR: [UsersIdfiltersOr!]
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersIdfiltersOr {
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersInsertInput {
-  """
-  Date
-  """
-  createdAt: String
-  displayName: String
-  email: String!
-  id: String
-  password: String!
-
-  """
-  Date
-  """
-  updatedAt: String
-  username: String!
-}
-
-type UsersItem {
-  """
-  Date
-  """
-  createdAt: String
-  displayName: String
-  email: String!
-  id: String!
-  password: String!
-
-  """
-  Date
-  """
-  updatedAt: String
-  username: String!
-}
-
-input UsersOrderBy {
-  createdAt: InnerOrder
-  displayName: InnerOrder
-  email: InnerOrder
-  id: InnerOrder
-  password: InnerOrder
-  updatedAt: InnerOrder
-  username: InnerOrder
-}
-
-input UsersPasswordFilters {
-  OR: [UsersPasswordfiltersOr!]
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersPasswordfiltersOr {
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-type UsersSelectItem {
-  """
-  Date
-  """
-  createdAt: String
-  displayName: String
-  email: String!
-  id: String!
-  password: String!
-
-  """
-  Date
-  """
-  updatedAt: String
-  username: String!
-}
-
-input UsersUpdateInput {
-  """
-  Date
-  """
-  createdAt: String
-  displayName: String
-  email: String
-  id: String
-  password: String
-
-  """
-  Date
-  """
-  updatedAt: String
-  username: String
-}
-
-input UsersUpdatedAtFilters {
-  OR: [UsersUpdatedAtfiltersOr!]
-
-  """
-  Date
-  """
-  eq: String
-
-  """
-  Date
-  """
-  gt: String
-
-  """
-  Date
-  """
-  gte: String
-  ilike: String
-
-  """
-  Array<Date>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-
-  """
-  Date
-  """
-  lt: String
-
-  """
-  Date
-  """
-  lte: String
-
-  """
-  Date
-  """
-  ne: String
-  notIlike: String
-
-  """
-  Array<Date>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersUpdatedAtfiltersOr {
-  """
-  Date
-  """
-  eq: String
-
-  """
-  Date
-  """
-  gt: String
-
-  """
-  Date
-  """
-  gte: String
-  ilike: String
-
-  """
-  Array<Date>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-
-  """
-  Date
-  """
-  lt: String
-
-  """
-  Date
-  """
-  lte: String
-
-  """
-  Date
-  """
-  ne: String
-  notIlike: String
-
-  """
-  Array<Date>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersUsernameFilters {
-  OR: [UsersUsernamefiltersOr!]
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
-}
-
-input UsersUsernamefiltersOr {
-  eq: String
-  gt: String
-  gte: String
-  ilike: String
-
-  """
-  Array<undefined>
-  """
-  inArray: [String!]
-  isNotNull: Boolean
-  isNull: Boolean
-  like: String
-  lt: String
-  lte: String
-  ne: String
-  notIlike: String
-
-  """
-  Array<undefined>
-  """
-  notInArray: [String!]
-  notLike: String
+  example(offset: Int, orderBy: ExamplesOrderBy, where: ExamplesFilters): ExamplesSelectItem
+  examples(limit: Int, offset: Int, orderBy: ExamplesOrderBy, where: ExamplesFilters): [ExamplesSelectItem!]!
 }

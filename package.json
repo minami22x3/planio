@@ -5,9 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "drizzle-kit migrate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "drizzle-kit": "drizzle-kit",
     "graphql-codegen": "graphql-codegen",
     "prepare": "husky"
   },

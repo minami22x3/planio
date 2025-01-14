@@ -10,8 +10,8 @@ const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'Query',
     fields: {
-      user: entities.queries.usersSingle,
-      users: entities.queries.users,
+      example: entities.queries.examplesSingle,
+      examples: entities.queries.examples,
     },
   }),
   mutation: new GraphQLObjectType({

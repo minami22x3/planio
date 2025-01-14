@@ -1,11 +1,10 @@
-CREATE TABLE "users" (
+CREATE TABLE "examples" (
 	"id" varchar(24) PRIMARY KEY NOT NULL,
-	"username" varchar(24) NOT NULL,
-	"email" text NOT NULL,
-	"password" text NOT NULL,
-	"displayName" text,
+	"foo" varchar(24) NOT NULL,
+	"bar" text NOT NULL,
+	"baz" integer,
 	"created_at" timestamp DEFAULT now(),
 	"updated_at" timestamp DEFAULT now(),
-	CONSTRAINT "users_username_unique" UNIQUE("username"),
-	CONSTRAINT "users_email_unique" UNIQUE("email")
+	CONSTRAINT "examples_foo_unique" UNIQUE("foo"),
+	CONSTRAINT "examples_bar_unique" UNIQUE("bar")
 );

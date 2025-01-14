@@ -18,6 +18,338 @@ export type Scalars = {
   Float: { input: number; output: number };
 };
 
+export type ExamplesBarFilters = {
+  OR?: InputMaybe<Array<ExamplesBarfiltersOr>>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesBarfiltersOr = {
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesBazFilters = {
+  OR?: InputMaybe<Array<ExamplesBazfiltersOr>>;
+  eq?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['Int']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
+  ne?: InputMaybe<Scalars['Int']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['Int']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesBazfiltersOr = {
+  eq?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['Int']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
+  ne?: InputMaybe<Scalars['Int']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['Int']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesCreatedAtFilters = {
+  OR?: InputMaybe<Array<ExamplesCreatedAtfiltersOr>>;
+  /** Date */
+  eq?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lte?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesCreatedAtfiltersOr = {
+  /** Date */
+  eq?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lte?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesFilters = {
+  OR?: InputMaybe<Array<ExamplesFiltersOr>>;
+  bar?: InputMaybe<ExamplesBarFilters>;
+  baz?: InputMaybe<ExamplesBazFilters>;
+  createdAt?: InputMaybe<ExamplesCreatedAtFilters>;
+  foo?: InputMaybe<ExamplesFooFilters>;
+  id?: InputMaybe<ExamplesIdFilters>;
+  updatedAt?: InputMaybe<ExamplesUpdatedAtFilters>;
+};
+
+export type ExamplesFiltersOr = {
+  bar?: InputMaybe<ExamplesBarFilters>;
+  baz?: InputMaybe<ExamplesBazFilters>;
+  createdAt?: InputMaybe<ExamplesCreatedAtFilters>;
+  foo?: InputMaybe<ExamplesFooFilters>;
+  id?: InputMaybe<ExamplesIdFilters>;
+  updatedAt?: InputMaybe<ExamplesUpdatedAtFilters>;
+};
+
+export type ExamplesFooFilters = {
+  OR?: InputMaybe<Array<ExamplesFoofiltersOr>>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesFoofiltersOr = {
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesIdFilters = {
+  OR?: InputMaybe<Array<ExamplesIdfiltersOr>>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesIdfiltersOr = {
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<undefined> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesInsertInput = {
+  bar: Scalars['String']['input'];
+  baz?: InputMaybe<Scalars['Int']['input']>;
+  /** Date */
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  foo: Scalars['String']['input'];
+  id?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesItem = {
+  __typename?: 'ExamplesItem';
+  bar: Scalars['String']['output'];
+  baz?: Maybe<Scalars['Int']['output']>;
+  /** Date */
+  createdAt?: Maybe<Scalars['String']['output']>;
+  foo: Scalars['String']['output'];
+  id: Scalars['String']['output'];
+  /** Date */
+  updatedAt?: Maybe<Scalars['String']['output']>;
+};
+
+export type ExamplesOrderBy = {
+  bar?: InputMaybe<InnerOrder>;
+  baz?: InputMaybe<InnerOrder>;
+  createdAt?: InputMaybe<InnerOrder>;
+  foo?: InputMaybe<InnerOrder>;
+  id?: InputMaybe<InnerOrder>;
+  updatedAt?: InputMaybe<InnerOrder>;
+};
+
+export type ExamplesSelectItem = {
+  __typename?: 'ExamplesSelectItem';
+  bar: Scalars['String']['output'];
+  baz?: Maybe<Scalars['Int']['output']>;
+  /** Date */
+  createdAt?: Maybe<Scalars['String']['output']>;
+  foo: Scalars['String']['output'];
+  id: Scalars['String']['output'];
+  /** Date */
+  updatedAt?: Maybe<Scalars['String']['output']>;
+};
+
+export type ExamplesUpdateInput = {
+  bar?: InputMaybe<Scalars['String']['input']>;
+  baz?: InputMaybe<Scalars['Int']['input']>;
+  /** Date */
+  createdAt?: InputMaybe<Scalars['String']['input']>;
+  foo?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  updatedAt?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesUpdatedAtFilters = {
+  OR?: InputMaybe<Array<ExamplesUpdatedAtfiltersOr>>;
+  /** Date */
+  eq?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lte?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ExamplesUpdatedAtfiltersOr = {
+  /** Date */
+  eq?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  gte?: InputMaybe<Scalars['String']['input']>;
+  ilike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
+  isNull?: InputMaybe<Scalars['Boolean']['input']>;
+  like?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lt?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  lte?: InputMaybe<Scalars['String']['input']>;
+  /** Date */
+  ne?: InputMaybe<Scalars['String']['input']>;
+  notIlike?: InputMaybe<Scalars['String']['input']>;
+  /** Array<Date> */
+  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
+  notLike?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type InnerOrder = {
   direction: OrderDirection;
   /** Priority of current field */
@@ -26,27 +358,27 @@ export type InnerOrder = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  deleteFromUsers: Array<UsersItem>;
-  insertIntoUsers: Array<UsersItem>;
-  insertIntoUsersSingle?: Maybe<UsersItem>;
-  updateUsers: Array<UsersItem>;
+  deleteFromExamples: Array<ExamplesItem>;
+  insertIntoExamples: Array<ExamplesItem>;
+  insertIntoExamplesSingle?: Maybe<ExamplesItem>;
+  updateExamples: Array<ExamplesItem>;
 };
 
-export type MutationDeleteFromUsersArgs = {
-  where?: InputMaybe<UsersFilters>;
+export type MutationDeleteFromExamplesArgs = {
+  where?: InputMaybe<ExamplesFilters>;
 };
 
-export type MutationInsertIntoUsersArgs = {
-  values: Array<UsersInsertInput>;
+export type MutationInsertIntoExamplesArgs = {
+  values: Array<ExamplesInsertInput>;
 };
 
-export type MutationInsertIntoUsersSingleArgs = {
-  values: UsersInsertInput;
+export type MutationInsertIntoExamplesSingleArgs = {
+  values: ExamplesInsertInput;
 };
 
-export type MutationUpdateUsersArgs = {
-  set: UsersUpdateInput;
-  where?: InputMaybe<UsersFilters>;
+export type MutationUpdateExamplesArgs = {
+  set: ExamplesUpdateInput;
+  where?: InputMaybe<ExamplesFilters>;
 };
 
 /** Order by direction */
@@ -59,532 +391,154 @@ export enum OrderDirection {
 
 export type Query = {
   __typename?: 'Query';
-  user?: Maybe<UsersSelectItem>;
-  users: Array<UsersSelectItem>;
+  example?: Maybe<ExamplesSelectItem>;
+  examples: Array<ExamplesSelectItem>;
 };
 
-export type QueryUserArgs = {
+export type QueryExampleArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<UsersOrderBy>;
-  where?: InputMaybe<UsersFilters>;
+  orderBy?: InputMaybe<ExamplesOrderBy>;
+  where?: InputMaybe<ExamplesFilters>;
 };
 
-export type QueryUsersArgs = {
+export type QueryExamplesArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   offset?: InputMaybe<Scalars['Int']['input']>;
-  orderBy?: InputMaybe<UsersOrderBy>;
-  where?: InputMaybe<UsersFilters>;
+  orderBy?: InputMaybe<ExamplesOrderBy>;
+  where?: InputMaybe<ExamplesFilters>;
 };
 
-export type UsersCreatedAtFilters = {
-  OR?: InputMaybe<Array<UsersCreatedAtfiltersOr>>;
-  /** Date */
-  eq?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lte?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersCreatedAtfiltersOr = {
-  /** Date */
-  eq?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lte?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersDisplayNameFilters = {
-  OR?: InputMaybe<Array<UsersDisplayNamefiltersOr>>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersDisplayNamefiltersOr = {
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersEmailFilters = {
-  OR?: InputMaybe<Array<UsersEmailfiltersOr>>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersEmailfiltersOr = {
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersFilters = {
-  OR?: InputMaybe<Array<UsersFiltersOr>>;
-  createdAt?: InputMaybe<UsersCreatedAtFilters>;
-  displayName?: InputMaybe<UsersDisplayNameFilters>;
-  email?: InputMaybe<UsersEmailFilters>;
-  id?: InputMaybe<UsersIdFilters>;
-  password?: InputMaybe<UsersPasswordFilters>;
-  updatedAt?: InputMaybe<UsersUpdatedAtFilters>;
-  username?: InputMaybe<UsersUsernameFilters>;
-};
-
-export type UsersFiltersOr = {
-  createdAt?: InputMaybe<UsersCreatedAtFilters>;
-  displayName?: InputMaybe<UsersDisplayNameFilters>;
-  email?: InputMaybe<UsersEmailFilters>;
-  id?: InputMaybe<UsersIdFilters>;
-  password?: InputMaybe<UsersPasswordFilters>;
-  updatedAt?: InputMaybe<UsersUpdatedAtFilters>;
-  username?: InputMaybe<UsersUsernameFilters>;
-};
-
-export type UsersIdFilters = {
-  OR?: InputMaybe<Array<UsersIdfiltersOr>>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersIdfiltersOr = {
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersInsertInput = {
-  /** Date */
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  displayName?: InputMaybe<Scalars['String']['input']>;
-  email: Scalars['String']['input'];
-  id?: InputMaybe<Scalars['String']['input']>;
-  password: Scalars['String']['input'];
-  /** Date */
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  username: Scalars['String']['input'];
-};
-
-export type UsersItem = {
-  __typename?: 'UsersItem';
-  /** Date */
-  createdAt?: Maybe<Scalars['String']['output']>;
-  displayName?: Maybe<Scalars['String']['output']>;
-  email: Scalars['String']['output'];
-  id: Scalars['String']['output'];
-  password: Scalars['String']['output'];
-  /** Date */
-  updatedAt?: Maybe<Scalars['String']['output']>;
-  username: Scalars['String']['output'];
-};
-
-export type UsersOrderBy = {
-  createdAt?: InputMaybe<InnerOrder>;
-  displayName?: InputMaybe<InnerOrder>;
-  email?: InputMaybe<InnerOrder>;
-  id?: InputMaybe<InnerOrder>;
-  password?: InputMaybe<InnerOrder>;
-  updatedAt?: InputMaybe<InnerOrder>;
-  username?: InputMaybe<InnerOrder>;
-};
-
-export type UsersPasswordFilters = {
-  OR?: InputMaybe<Array<UsersPasswordfiltersOr>>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersPasswordfiltersOr = {
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersSelectItem = {
-  __typename?: 'UsersSelectItem';
-  /** Date */
-  createdAt?: Maybe<Scalars['String']['output']>;
-  displayName?: Maybe<Scalars['String']['output']>;
-  email: Scalars['String']['output'];
-  id: Scalars['String']['output'];
-  password: Scalars['String']['output'];
-  /** Date */
-  updatedAt?: Maybe<Scalars['String']['output']>;
-  username: Scalars['String']['output'];
-};
-
-export type UsersUpdateInput = {
-  /** Date */
-  createdAt?: InputMaybe<Scalars['String']['input']>;
-  displayName?: InputMaybe<Scalars['String']['input']>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  id?: InputMaybe<Scalars['String']['input']>;
-  password?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  updatedAt?: InputMaybe<Scalars['String']['input']>;
-  username?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersUpdatedAtFilters = {
-  OR?: InputMaybe<Array<UsersUpdatedAtfiltersOr>>;
-  /** Date */
-  eq?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lte?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersUpdatedAtfiltersOr = {
-  /** Date */
-  eq?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lt?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  lte?: InputMaybe<Scalars['String']['input']>;
-  /** Date */
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<Date> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersUsernameFilters = {
-  OR?: InputMaybe<Array<UsersUsernamefiltersOr>>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UsersUsernamefiltersOr = {
-  eq?: InputMaybe<Scalars['String']['input']>;
-  gt?: InputMaybe<Scalars['String']['input']>;
-  gte?: InputMaybe<Scalars['String']['input']>;
-  ilike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  inArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  isNotNull?: InputMaybe<Scalars['Boolean']['input']>;
-  isNull?: InputMaybe<Scalars['Boolean']['input']>;
-  like?: InputMaybe<Scalars['String']['input']>;
-  lt?: InputMaybe<Scalars['String']['input']>;
-  lte?: InputMaybe<Scalars['String']['input']>;
-  ne?: InputMaybe<Scalars['String']['input']>;
-  notIlike?: InputMaybe<Scalars['String']['input']>;
-  /** Array<undefined> */
-  notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
-  notLike?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type UserFragment = {
-  __typename: 'UsersSelectItem';
+export type ExampleFragment = {
+  __typename: 'ExamplesSelectItem';
   id: string;
-  username: string;
-  displayName?: string | null;
-  email: string;
+  foo: string;
+  bar: string;
+  createdAt?: string | null;
 };
 
-export type UsersQueryVariables = Exact<{ [key: string]: never }>;
+export type ExamplesQueryVariables = Exact<{ [key: string]: never }>;
 
-export type UsersQuery = {
+export type ExamplesQuery = {
   __typename: 'Query';
-  users: Array<{
-    __typename: 'UsersSelectItem';
+  examples: Array<{
+    __typename: 'ExamplesSelectItem';
     id: string;
-    username: string;
-    displayName?: string | null;
-    email: string;
+    foo: string;
+    bar: string;
+    createdAt?: string | null;
   }>;
 };
 
-export type UserQueryVariables = Exact<{
-  where?: InputMaybe<UsersFilters>;
+export type ExampleQueryVariables = Exact<{
+  where?: InputMaybe<ExamplesFilters>;
 }>;
 
-export type UserQuery = {
+export type ExampleQuery = {
   __typename: 'Query';
-  user?: {
-    __typename: 'UsersSelectItem';
+  example?: {
+    __typename: 'ExamplesSelectItem';
     id: string;
-    username: string;
-    displayName?: string | null;
-    email: string;
+    foo: string;
+    bar: string;
+    createdAt?: string | null;
   } | null;
 };
 
-export const UserFragmentDoc = gql`
-  fragment User on UsersSelectItem {
+export const ExampleFragmentDoc = gql`
+  fragment Example on ExamplesSelectItem {
     __typename
     id
-    username
-    displayName
-    email
+    foo
+    bar
+    createdAt
   }
 `;
-export const UsersDocument = gql`
-  query Users {
+export const ExamplesDocument = gql`
+  query Examples {
     __typename
-    users {
+    examples {
       __typename
-      ...User
+      ...Example
     }
   }
-  ${UserFragmentDoc}
+  ${ExampleFragmentDoc}
 `;
 
 /**
- * __useUsersQuery__
+ * __useExamplesQuery__
  *
- * To run a query within a React component, call `useUsersQuery` and pass it any options that fit your needs.
- * When your component renders, `useUsersQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useExamplesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useExamplesQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useUsersQuery({
+ * const { data, loading, error } = useExamplesQuery({
  *   variables: {
  *   },
  * });
  */
-export function useUsersQuery(baseOptions?: Apollo.QueryHookOptions<UsersQuery, UsersQueryVariables>) {
+export function useExamplesQuery(baseOptions?: Apollo.QueryHookOptions<ExamplesQuery, ExamplesQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<UsersQuery, UsersQueryVariables>(UsersDocument, options);
+  return Apollo.useQuery<ExamplesQuery, ExamplesQueryVariables>(ExamplesDocument, options);
 }
-export function useUsersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UsersQuery, UsersQueryVariables>) {
+export function useExamplesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ExamplesQuery, ExamplesQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<UsersQuery, UsersQueryVariables>(UsersDocument, options);
+  return Apollo.useLazyQuery<ExamplesQuery, ExamplesQueryVariables>(ExamplesDocument, options);
 }
-export function useUsersSuspenseQuery(
-  baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<UsersQuery, UsersQueryVariables>
+export function useExamplesSuspenseQuery(
+  baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<ExamplesQuery, ExamplesQueryVariables>
 ) {
   const options = baseOptions === Apollo.skipToken ? baseOptions : { ...defaultOptions, ...baseOptions };
-  return Apollo.useSuspenseQuery<UsersQuery, UsersQueryVariables>(UsersDocument, options);
+  return Apollo.useSuspenseQuery<ExamplesQuery, ExamplesQueryVariables>(ExamplesDocument, options);
 }
-export type UsersQueryHookResult = ReturnType<typeof useUsersQuery>;
-export type UsersLazyQueryHookResult = ReturnType<typeof useUsersLazyQuery>;
-export type UsersSuspenseQueryHookResult = ReturnType<typeof useUsersSuspenseQuery>;
-export type UsersQueryResult = Apollo.QueryResult<UsersQuery, UsersQueryVariables>;
-export const UserDocument = gql`
-  query User($where: UsersFilters) {
+export type ExamplesQueryHookResult = ReturnType<typeof useExamplesQuery>;
+export type ExamplesLazyQueryHookResult = ReturnType<typeof useExamplesLazyQuery>;
+export type ExamplesSuspenseQueryHookResult = ReturnType<typeof useExamplesSuspenseQuery>;
+export type ExamplesQueryResult = Apollo.QueryResult<ExamplesQuery, ExamplesQueryVariables>;
+export const ExampleDocument = gql`
+  query Example($where: ExamplesFilters) {
     __typename
-    user(where: $where) {
+    example(where: $where) {
       __typename
-      ...User
+      ...Example
     }
   }
-  ${UserFragmentDoc}
+  ${ExampleFragmentDoc}
 `;
 
 /**
- * __useUserQuery__
+ * __useExampleQuery__
  *
- * To run a query within a React component, call `useUserQuery` and pass it any options that fit your needs.
- * When your component renders, `useUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useExampleQuery` and pass it any options that fit your needs.
+ * When your component renders, `useExampleQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useUserQuery({
+ * const { data, loading, error } = useExampleQuery({
  *   variables: {
  *      where: // value for 'where'
  *   },
  * });
  */
-export function useUserQuery(baseOptions?: Apollo.QueryHookOptions<UserQuery, UserQueryVariables>) {
+export function useExampleQuery(baseOptions?: Apollo.QueryHookOptions<ExampleQuery, ExampleQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useQuery<UserQuery, UserQueryVariables>(UserDocument, options);
+  return Apollo.useQuery<ExampleQuery, ExampleQueryVariables>(ExampleDocument, options);
 }
-export function useUserLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<UserQuery, UserQueryVariables>) {
+export function useExampleLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ExampleQuery, ExampleQueryVariables>) {
   const options = { ...defaultOptions, ...baseOptions };
-  return Apollo.useLazyQuery<UserQuery, UserQueryVariables>(UserDocument, options);
+  return Apollo.useLazyQuery<ExampleQuery, ExampleQueryVariables>(ExampleDocument, options);
 }
-export function useUserSuspenseQuery(
-  baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<UserQuery, UserQueryVariables>
+export function useExampleSuspenseQuery(
+  baseOptions?: Apollo.SkipToken | Apollo.SuspenseQueryHookOptions<ExampleQuery, ExampleQueryVariables>
 ) {
   const options = baseOptions === Apollo.skipToken ? baseOptions : { ...defaultOptions, ...baseOptions };
-  return Apollo.useSuspenseQuery<UserQuery, UserQueryVariables>(UserDocument, options);
+  return Apollo.useSuspenseQuery<ExampleQuery, ExampleQueryVariables>(ExampleDocument, options);
 }
-export type UserQueryHookResult = ReturnType<typeof useUserQuery>;
-export type UserLazyQueryHookResult = ReturnType<typeof useUserLazyQuery>;
-export type UserSuspenseQueryHookResult = ReturnType<typeof useUserSuspenseQuery>;
-export type UserQueryResult = Apollo.QueryResult<UserQuery, UserQueryVariables>;
+export type ExampleQueryHookResult = ReturnType<typeof useExampleQuery>;
+export type ExampleLazyQueryHookResult = ReturnType<typeof useExampleLazyQuery>;
+export type ExampleSuspenseQueryHookResult = ReturnType<typeof useExampleSuspenseQuery>;
+export type ExampleQueryResult = Apollo.QueryResult<ExampleQuery, ExampleQueryVariables>;
