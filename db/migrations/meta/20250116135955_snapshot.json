@@ -1,5 +1,5 @@
 {
-  "id": "8568c34b-6db5-410f-b017-5066b4ea841d",
+  "id": "41d334cb-892e-44b2-9bd6-8696d99a1d91",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -54,16 +54,12 @@
         "examples_foo_unique": {
           "name": "examples_foo_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "foo"
-          ]
+          "columns": ["foo"]
         },
         "examples_bar_unique": {
           "name": "examples_bar_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "bar"
-          ]
+          "columns": ["bar"]
         }
       },
       "policies": {},
