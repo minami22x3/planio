@@ -12,25 +12,43 @@ You'll need to install these tools on your machine:
 
 ## Development
 
-Copy content of `.env.example` file to `.env` file. Then, start the server:
+Copy content of `.env.example` file to `.env` file. Then, follow the steps below:
+
+### Supabase Studio
+
+```bash
+yarn supabase start
+```
+
+Once the studio has started (the initial run may take quite awhile), you will see something similar on your console. Copy these keys and paste them into the
+`.env` file to match with the existing environment variables.
+
+```text
+Started supabase local development setup.
+
+         API URL: http://127.0.0.1:54321
+     GraphQL URL: http://127.0.0.1:54321/graphql/v1
+  S3 Storage URL: http://127.0.0.1:54321/storage/v1/s3
+          DB URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+      Studio URL: http://127.0.0.1:54323
+    Inbucket URL: http://127.0.0.1:54324
+      JWT secret: super-secret-jwt-token-with-at-least-32-characters-long
+        anon key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0
+service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU
+   S3 Access Key: 625729a08b95bf1b7ff351a663f3a23c
+   S3 Secret Key: 850181e4652dd023b7a98c58ae0d2d34bd487ee0cc3254aed6eda37307425907
+       S3 Region: local
+```
+
+Then open [localhost:54323](http://localhost:54323) to access to your local Supabase Studio.
+
+### Server
 
 ```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-### Database
-
-In this project, we'll use [`drizzle-orm`](https://orm.drizzle.team) to working with
-[`PostgreSQL`](https://postgresql.org) database.
-
-To start the local database, run `docker-compose up -d`, then use any tool to access to the database with below
-connection string:
-
-```
-postgres://postgres:postgres@localhost:6543/planiox
-```
+Open [localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Migrations
 
