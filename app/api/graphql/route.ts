@@ -4,13 +4,8 @@ import { type NextRequest } from 'next/server';
 import { server } from '@/server';
 
 const handler = startServerAndCreateNextHandler<NextRequest>(server, {
-  context: async (req) => ({ req }),
+  context: async (request) => ({ req: request }),
 });
 
-export async function GET(req: Request) {
-  return handler(req);
-}
-
-export async function POST(req: Request) {
-  return handler(req);
-}
+export const GET = async (request: NextRequest) => handler(request);
+export const POST = async (request: NextRequest) => handler(request);
