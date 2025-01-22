@@ -103,7 +103,7 @@
 
 @layer components {
   .button {
-    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md align-middle text-body font-semibold leading-tight ring-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0;
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md align-middle text-body font-medium leading-tight ring-offset-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0;
 
     &.-variant {
       &-default {
